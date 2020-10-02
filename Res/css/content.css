@@ -49,6 +49,21 @@
     font-size: 70px;
     line-height: 75px;
     margin-bottom: 50px;
+    animation: showUp .8s 1.5s linear alternate both;
+    -webkit-animation: showUp .8s 1.5s linear alternate both;
+    -ms-animation: showUp .8s 1.5s linear alternate both;
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #intro-view .txt-group .intro-desc {
@@ -58,6 +73,9 @@
     letter-spacing: .8px;
     line-height: 22px;
     margin-bottom: 50px;
+    animation: showUp .8s 1.8s linear alternate both;
+    -webkit-animation: showUp .8s 1.8s linear alternate both;
+    -ms-animation: showUp .8s 1.8s linear alternate both;
 }
 
 #intro-view .txt-group .intro-tit,
