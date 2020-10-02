@@ -42,15 +42,11 @@ function headerEvent() {
 
         selectedMenu.mouseenter(function () {
             let thisMenu = $(this).attr('href');
-            let emptyValue = '#';
 
-            console.log(emptyValue);
-            //$('.gnb-sub').find(thisMenu).addClass('active').siblings().removeClass('active');
-            $('.gnb-sub').find(thisMenu).slideToggle();
+            $('.gnb-sub').find(thisMenu).addClass('active').siblings().removeClass('active');
 
-            if (thisMenu === emptyValue) {
-                alert('wrk');
-                //$('.gnb-sub, .gnb-sub-cont.active').removeClass('active');
+            if ($(this).hasClass('empty-sub')) {
+                $('.gnb-sub').find('.active').removeClass('active');
             }
         });
 
@@ -62,8 +58,9 @@ function headerEvent() {
 
 function hamburger() {
     $('#hamburger').click(function () {
-        let siteMap = $('.site-map');
+        let siteMap = $('.sitemap');
 
+        siteMap.slideToggle();
         if (siteMap.hasClass('active')) {
             siteMap.removeClass('active');
             $(this).removeClass('active');
