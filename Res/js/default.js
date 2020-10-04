@@ -1,22 +1,5 @@
-const header = $('#header');
-
 function headerEvent() {
-    let underbar = $('.nav-line');
-
-    $('.gnb li a').mouseenter(function () {
-        let menuPosition = $(this).offset().left;
-        let menuWidth = $(this).width();
-
-        underbar.addClass('on');
-        underbar.css({
-            left: menuPosition + 'px',
-            width: menuWidth + 'px'
-        });
-    });
-
-    $('.gnb li a').mouseleave(function () {
-        underbar.removeClass('on');
-    });
+    let header = $('#header');
 
     //header toogle
     header.mouseenter(function () {
@@ -33,8 +16,9 @@ function headerEvent() {
         $('.gnb-sub-cont').removeClass('active');
     });
 
-    //sub menu 보여주기
+    //sub menu 보여주기, .nav-line 애니메이션
     function gnbSubToggle() {
+        let underbar = $('.nav-line');
         let selectedMenu = $('.gnb>li>a');
 
         selectedMenu.mouseenter(function () {
@@ -45,6 +29,20 @@ function headerEvent() {
             if ($(this).hasClass('empty-sub')) {
                 $('.gnb-sub').find('.active').removeClass('active');
             }
+
+            let menuPosition = $(this).offset().left;
+            let menuWidth = $(this).width();
+
+            underbar.addClass('on');
+            underbar.css({
+                left: menuPosition + 'px',
+                width: menuWidth + 'px'
+            });
+        });
+
+        selectedMenu.mouseleave(function () {
+            $('.gnb-sub').find('.active').removeClass('active');
+            underbar.removeClass('on');
         });
 
     }

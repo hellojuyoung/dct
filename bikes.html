@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <meta name="description" content="두카티 코리아 웹사이트 리뉴얼 프로젝트입니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ducati Korea">
+    <meta property="og:description" content="두카티 코리아 웹사이트 리뉴얼 프로젝트입니다.">
+    <meta property="og:image" content="http://shinjuyoung/published/ducati/index.html">
+    <meta property="og:url" content="http://shinjuyoung/published/ducati/index.html">
+
+    <title>Bikes | Ducati Korea</title>
+
+    <!-- xeicon -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+    <link rel="stylesheet" href="./Res/css/main.css" />
+</head>
+
+<body>
+    <!-- header : s -->
+    <header id="header">
+        <div class="header-wrap" w3-include-html="./include/header.html"></div>
+    </header>
+    <!-- header : e -->
+    <!-- left aside : s -->
+    <div class="sns-wrap" w3-include-html="./include/aside_sns.html">
+    </div>
+    <!-- left aside : e -->
+    <!-- main : s -->
+    <div id="main">
+
+    </div>
+    <footer id="footer">
+        <div class="footer-cont-wrap" w3-include-html="./include/footer.html">
+        </div>
+        <div class="f-bottom">Copyright © 2014 DUCATI-KOREA. All Rights Reserved. 이 페이지는 비상업용, 개인 포트폴리오 목적으로 제작되었습니다.
+        </div>
+    </footer>
+    <!-- main : e -->
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="./Res/js/includeHTML.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="./Res/js/default.js"></script>
+
+    <!-- bxslider -->
+    <script>
+        $(document).ready(function () {
+            $(".recently-update .thumb-list-wrap.new-archive ul").bxSlider({
+                slideWidth: "auto",
+                infiniteLoop: true,
+                minSlides: 3,
+                maxSlides: 4,
+                moveSlides: 1,
+                auto: true,
+                pause: 3000,
+                speed: 500,
+                pagerSelector: ".pagerbar-wrap",
+                pagerType: "full",
+                prevSelector: ".prev-btn",
+                nextSelector: ".next-btn",
+            });
+        });
+    </script>
+</body>
+
+</html>
