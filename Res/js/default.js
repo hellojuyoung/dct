@@ -1,5 +1,4 @@
 const header = $('#header');
-const subArea = $('.gnb-sub');
 
 function headerEvent() {
     let underbar = $('.nav-line');
@@ -20,23 +19,21 @@ function headerEvent() {
     });
 
     //header toogle
-    $('#header').mouseenter(function () {
+    header.mouseenter(function () {
         header.addClass('active');
-        subArea.addClass('active');
     })
 
-    $('#header').mouseleave(function () {
+    header.mouseleave(function () {
         underbar.removeClass('on');
         underbar.css({
             left: 0,
             width: 0
         });
         header.removeClass('active');
-        subArea.removeClass('active');
         $('.gnb-sub-cont').removeClass('active');
     });
 
-
+    //sub menu 보여주기
     function gnbSubToggle() {
         let selectedMenu = $('.gnb>li>a');
 
@@ -71,14 +68,20 @@ function hamburger() {
     });
 }
 
+function siteMapScrollTop() {
+    $('.sitemap-table').offset({
+        top: 150
+    });
+}
+
 
 //run!
 
 $(document).ready(function () {
     headerEvent();
-    hamburger()
+    hamburger();
 
-    //$('a[href="#"]').click(function (event) {
-    //    event.preventDefault();
-    //});
+    $('a[href="#"]').click(function (event) {
+        event.preventDefault();
+    });
 });
