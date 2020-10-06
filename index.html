@@ -4,6 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO -->
+  <meta name="description" content="두카티 코리아 웹사이트 리뉴얼 프로젝트입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ducati Korea">
+  <meta property="og:description" content="두카티 코리아 웹사이트 리뉴얼 프로젝트입니다.">
+  <meta property="og:image" content="http://shinjuyoung/published/ducati/index.html">
+  <meta property="og:url" content="http://shinjuyoung/published/ducati/index.html">
+
   <title>Ducati Korea</title>
 
   <!-- xeicon -->
@@ -210,35 +218,122 @@
     <!-- new product : e -->
     <!-- test ride : s -->
     <section class="content test-ride-regist">
-      <div class="thumb-type-title">
+      <div class="top-title">
         <div class="txt-intro">
-          <span class="sub-tit">Enter the Land of Joy</span>
           <h3 class="tit">시승 문의</h3>
         </div>
       </div>
       <div class="regist-form-area">
         <form action="/">
-          <table>
+          <div class="form-top-wrap">
+            <span class="txt necessary">필수 입력 항목입니다.</span>
+          </div>
+          <table class="regist-form">
             <tr>
               <td>
-                <label for="">
-                  <span class="txt">시승요청 딜러 위치</span>
+                <label for="category" class="field-head">
+                  <span class="txt necessary">모델군</span>
                 </label>
+              </td>
+              <td>
+                <div class="select-wrap">
+                  <input type="hidden" name="model-category" class="input-select" />
+                  <select name="category" id="category" class="select w-mid" onchange="getCat1(this.value);">
+                    <option value="0">모델군을 선택하세요.</option>
+                    <option value="DIAVEL">DIAVEL</option>
+                    <option value="HYPERMOTARD">HYPERMOTARD</option>
+                    <option value="MONSTER">MONSTER</option>
+                    <option value="MULTISTRADA">MULTISTRADA</option>
+                    <option value="PANIGALE">PANIGALE</option>
+                    <option value="SUPERSPORT">SUPERSPORT</option>
+                    <option value="STREETFIGHTER">STREETFIGHTER</option>
+                    <option value="SCRAMBLER">SCRAMBLER</option>
+                  </select>
+                </div>
+              </td>
+              <td>
+                <label for="model-name" class="field-head">
+                  <span class="txt necessary">모델명</span>
+                </label>
+              </td>
+              <td>
+                <div class="select-wrap">
+                  <input type="hidden" name="model-name" class="input-select" />
+                  <select name="model-name" id="model-name" class="select w-mid" onchange="getCat2(this.value);">
+                    <option value="0">모델명을 선택하세요.</option>
+                    <option value="Diavel 1260">Diavel 1260</option>
+                    <option value="Diavel 1260 S">Diavel 1260 S</option>
+                    <option value="XDIAVEL S">XDIAVEL S</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="customer-name" class="field-head">
+                  <span class="txt necessary">이름</span>
+                </label>
+              </td>
+              <td colspan="3">
+                <input type="text" name="customer-name" class="input-txt w-mid" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="customer-phone-num" class="field-head">
+                  <span class="txt necessary">휴대폰 번호</span>
+                </label>
+              </td>
+              <td colspan="3">
+                <input type="text" name="customer-phone-num" class="input-txt w-mid" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="customer-mail-address" class="field-head">
+                  <span class="txt necessary">이메일 주소</span>
+                </label>
+              </td>
+              <td colspan="3">
+                <div class="email-wrap">
+                  <input type="text" name="customer-mail-address" class="input-txt w-short" />
+                  <span class="mid-txt">@</span>
+                  <input type="text" name="" class="input-txt w-mid email" />
+                  <div class="select-wrap">
+                    <input type="hidden" />
+                    <select name="email" id="select-email" class="select w-short">
+                      <option value="0">선택하세요.</option>
+                      <option value="naver">naver.com</option>
+                      <option value="daume">hanmail.com</option>
+                      <option value="google">gmail.com</option>
+                    </select>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="field-head">
+                  <span class="txt necessary">시승요청<br>딜러 위치</span>
+                </label>
+              </td>
+              <td colspan="3">
                 <div class="radio-wrap">
-                  <label for="">
-                    <input type="radio" />
+                  <label for="dealer-position-seoul" class="radio">
+                    <input type="radio" name="department" value="서울점" id="dealer-position-seoul" class="input-radio"
+                      checked />
                     <span class="txt">서울점</span>
                   </label>
-                  <label for="">
-                    <input type="radio" />
+                  <label for="dealer-position-bundang" class="radio">
+                    <input type="radio" name="department" value="분점" id="dealer-position-bundang" class="input-radio" />
                     <span class="txt">분당점</span>
                   </label>
-                  <label for="">
-                    <input type="radio" />
+                  <label for="dealer-position-daegu" class="radio">
+                    <input type="radio" name="department" value="대구점" id="dealer-position-daegu" class="input-radio" />
                     <span class="txt">대구점</span>
                   </label>
-                  <label for="">
-                    <input type="radio" />
+                  <label for="dealer-position-busan" class="radio">
+                    <input type="radio" name="department" value="부산점" id="dealer-position-busan" class="input-radio" />
                     <span class="txt">부산점</span>
                   </label>
                 </div>
@@ -246,94 +341,35 @@
             </tr>
             <tr>
               <td>
-                <label for="category">
-                  <span class="txt">모델군</span>
+                <label class="field-head">
+                  <span class="txt">모터사이클<br>보유 여부</span>
                 </label>
-                <input type="hidden" name="model-category" class="input-select" />
-                <select name="category" id="category" class="select" onchange="getCat1(this.value);">
-                  <option value="0">모델군을 선택하세요.</option>
-                  <option value="DIAVEL">DIAVEL</option>
-                  <option value="HYPERMOTARD">HYPERMOTARD</option>
-                  <option value="MONSTER">MONSTER</option>
-                  <option value="MULTISTRADA">MULTISTRADA</option>
-                  <option value="PANIGALE">PANIGALE</option>
-                  <option value="SUPERSPORT">SUPERSPORT</option>
-                  <option value="STREETFIGHTER">STREETFIGHTER</option>
-                  <option value="SCRAMBLER">SCRAMBLER</option>
-                </select>
-                <label for="model-name">
-                  <span class="txt">모델명</span>
-                </label>
-                <input type="hidden" name="model-name" class="input-select" />
-                <select name="model-name" id="model-name" class="select" onchange="getCat2(this.value);">
-                  <option value="">모델명을 선택하세요.</option>
-                  <option value="10">Diavel 1260</option>
-                  <option value="11">Diavel 1260 S</option>
-                  <option value="38">XDIAVEL S</option>
-                </select>
               </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="customer-name">
-                  <span class="txt">이름</span>
-                </label>
-                <input type="text" name="customer-name" class="input-txt" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="customer-phone-num">
-                  <span class="txt">휴대폰 번호</span>
-                </label>
-                <input type="text" name="customer-phone-num" class="input-txt" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="customer-mail-address">
-                  <span class="txt">이메일 주소</span>
-                </label>
-                <input type="text" name="customer-mail-address" class="input-txt" />
-                <span class="txt">@</span>
-                <input type="text" name="" class="input-txt" />
-                <input type="hidden" />
-                <select name="" id="">
-                  <option value="0">선택하세요.</option>
-                  <option value="naver">naver.com</option>
-                  <option value="daume">hanmail.com</option>
-                  <option value="google">gmail.com</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="">
-                  <span class="txt">모터사이클 보유 여부</span>
-                </label>
+              <td colspan="3">
                 <div class="radio-wrap">
-                  <label for="">
-                    <input type="radio" />
-                    <span class="txt">예</span>
+                  <label for="reserve-yes" class="radio">
+                    <input type="radio" name="duty" id="reserve-yes" class="input-radio" checked />
+                    <span class="txt" value="Y">예</span>
                   </label>
-                  <label for="">
-                    <input type="radio" />
-                    <span class="txt">아니오</span>
+                  <label for="reserve-no" class="radio">
+                    <input type="radio" name="duty" id="reserve-no" class="input-radio" />
+                    <span class="txt" value="N">아니오</span>
                   </label>
                 </div>
               </td>
             </tr>
           </table>
-          <div class="form-footer">
+          <div class="form-agree">
             <div class="test-ride-notice">
               <ul>
-                <li>시승자격 여부 : 2종 소형면허 소지, 600cc이상 모터사이클 경험 1년 이상</li>
-                <li>시승 필참 사항 : 풀페이스 헬멧/ 라이딩 자켓/ 부츠/ 글러브 필수 지참</li>
+                <li class="list">시승자격 여부 : 2종 소형면허 소지, 600cc이상 모터사이클 경험 1년 이상</li>
+                <li class="list">시승 필참 사항 : 풀페이스 헬멧/ 라이딩 자켓/ 부츠/ 글러브 필수 지참</li>
               </ul>
             </div>
-            <div class="regist-agree">
-              <label for="">
-                <input type="checkbox" />
+            <div class="regist-agree check-wrap">
+              <label for="regist-agree-check" class="check">
+                <input type="checkbox" name="agree" id="regist-agree-check" class="input-check"
+                  onchange="if( this.checked){$(this).parent().addClass('checked')}else{$(this).parent().removeClass('checked')} " />
                 <span class="txt">개인정보의 수집 및 이용목적에 대한 동의</span>
               </label>
               <div class="regist-agree-txt">
@@ -802,6 +838,7 @@
               </div>
             </div>
           </div>
+          <button type="button" class="submit-btn btn btn-mid btn-w-line"><span class="btn-txt">문의하기</span></button>
         </form>
       </div>
       <video class="bg-video" autoplay playsinline muted loop>

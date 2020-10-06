@@ -92,8 +92,7 @@
 
 
 /* update */
-.recently-update,
-.test-ride-regist {
+.recently-update {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -191,12 +190,18 @@
     margin-bottom: 80px;
 }
 
+.top-title .sub-tit {
+    margin-top: 20px;
+    text-align: center;
+}
+
 .introduce-models {
     padding: 100px 0 150px;
     background-color: #e1e1e1;
 }
 
-.introduce-models .txt-intro .tit {
+.introduce-models .txt-intro .tit,
+.test-ride-regist .txt-intro .tit {
     text-align: center;
 }
 
@@ -258,14 +263,15 @@
 
 /* test ride register */
 .test-ride-regist {
-    display: flex;
-    flex-direction: row-reverse;
+    position: relative;
     overflow: hidden;
-    padding: 100px 15% 150px;
+    padding: 100px 0;
+    color: #fff;
 }
 
 .test-ride-regist .thumb-type-title,
 .test-ride-regist .regist-form-area {
+    position: relative;
     z-index: 2;
 }
 
@@ -274,20 +280,90 @@
 }
 
 .test-ride-regist .regist-form-area {
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 30px;
+    color: #fff;
     background-color: rgba(0, 0, 0, .7);
 }
 
+.form-top-wrap {
+    clear: both;
+    overflow: hidden;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #424242;
+}
+
+.form-top-wrap .txt {
+    float: right;
+    font-size: 12px;
+}
+
+.form-top-wrap .txt.necessary:after {
+    right: auto;
+    left: -12px;
+}
+
+.necessary:before {}
+
+.regist-form tr {
+    height: 50px;
+    /*padding: 10px;*/
+}
+
+.regist-form tr td {
+    padding: 10px 0;
+}
+
+.regist-form .email-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.regist-form .mid-txt {
+    line-height: 50px;
+    padding: 0 7px;
+}
+
+.regist-form .input-txt.email {
+    border-right: none;
+}
+
+.test-ride-notice {
+    font-size: 12px;
+    padding: 10px;
+    margin: 10px 0;
+    border-top: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+    color: #949494;
+}
+
+.test-ride-notice .list:before {
+    background-color: #949494;
+}
+
+.test-ride-notice ul li {
+    margin-bottom: 5px;
+}
+
+.test-ride-notice ul li:last-child {
+    margin-bottom: 0;
+}
+
 .regist-agree-txt {
-    border: 1px solid rgba(255, 255, 255, .3);
+    border: 1px solid #424242;
 }
 
 .regist-agree-txt .policy {
-    height: 100px;
+    height: 65px;
     padding: 15px;
     font-size: 12px;
     overflow-y: scroll;
+}
+
+.submit-btn {
+    margin: 50px auto 20px;
 }
 
 .test-ride-regist .bg-video {

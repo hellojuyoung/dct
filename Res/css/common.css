@@ -66,6 +66,7 @@ body {
     border: 1px solid #fff;
     color: #fff;
     box-sizing: border-box;
+    background-color: transparent;
 }
 
 .btn-grey-line {
@@ -163,6 +164,83 @@ nav {
 .nav-line.on {
     opacity: 1;
 }
+
+/* my ducati */
+.my-ducati {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.my-ducati>ul {
+    display: flex;
+}
+
+.my-ducati>ul>li {
+    position: relative;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.my-ducati ul .lang:after,
+.my-ducati ul .mypage:before {
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+.my-ducati ul .lang:after {
+    width: 5px;
+    height: 5px;
+    top: 30%;
+    right: 20px;
+    transform: rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.my-ducati ul .mypage:before {
+    width: 1px;
+    height: 10px;
+    background-color: #424242;
+    top: calc(50% - 5px);
+    left: 0;
+}
+
+.my-ducati a {
+    color: #fff;
+}
+
+.my-ducati .lang-group {
+    position: absolute;
+    display: none;
+    width: 50px;
+    top: 25px;
+    left: 33%;
+    background-color: #c00;
+}
+
+.my-ducati .lang-group li:hover {
+    background-color: #424242;
+}
+
+.my-ducati .lang-group a,
+.active .my-ducati .lang-group a {
+    color: #fff;
+    line-height: 30px;
+}
+
+.active .my-ducati a {
+    color: #171717;
+}
+
+.active .my-ducati ul .lang:after {
+    border-color: #171717;
+}
+
 
 /* gnb-sub */
 .gnb-sub {
@@ -286,6 +364,12 @@ nav {
     z-index: 9999;
 }
 
+#hamburger>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 #hamburger .h-icon {
     position: absolute;
     display: block;
@@ -385,11 +469,13 @@ nav {
 }
 
 .sitemap-cont {
+    position: relative;
     height: 100%;
     overflow: scroll;
 }
 
 .sitemap-table {
+    position: absolute;
     width: 100%;
 }
 
@@ -696,13 +782,166 @@ nav {
     margin: auto;
 }
 
+
+
+/* form */
+.necessary {
+    position: relative;
+}
+
+.necessary:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    margin-top: -2.5px;
+    right: -10px;
+    border-radius: 100%;
+    background-color: #c00;
+}
+
+/* form width */
+.w-short {
+    width: 120px;
+}
+
+.w-mid {
+    width: 180px;
+}
+
+
+label {
+    width: 150px;
+    height: 30px;
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.field-head {
+    display: block;
+    width: 10vw;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    padding: 0 5px;
+}
+
+.select-wrap {
+    margin-right: 20px;
+}
+
+.select-wrap .select {
+    height: 30px;
+    padding: 5px 9px 5px 5px;
+    box-sizing: border-box;
+    border-color: #fff;
+    background: transparent;
+    color: #fff;
+    outline: 0;
+}
+
+.check,
+.radio {
+    position: relative;
+    margin-right: 15px;
+}
+
+
+input[type=radio],
+input[type=checkbox] {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+input[type=radio]+.txt:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-image: url('../img/common/radio.png');
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+input[type=radio]:checked+.txt:after {
+    background-position: right;
+}
+
+.check-wrap .check:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: left;
+    z-index: 5;
+}
+
+.check-wrap .check:before {
+    background-image: url('../img/common/checkbox.png');
+}
+
+.check.checked:before {
+    background-position: right;
+}
+
+.check.checked .input-check {}
+
+
+input[type=text] {
+    height: 30px;
+    padding: 5px;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+
+
+
 .bg-video {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: -1;
 }
+
+.list {
+    position: relative;
+    padding-left: 15px;
+}
+
+.list:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 2px;
+    height: 2px;
+    top: 49%;
+    left: 5px;
+    background-color: #fff;
+}
+
 
 /* footer */
 #footer {
